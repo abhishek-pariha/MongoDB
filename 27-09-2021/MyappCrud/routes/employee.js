@@ -14,7 +14,7 @@ router.get('/add',function(req, res, next){
 router.post('/add-emp',function(req, res, next){
     const mybodydata = {
         emp_name : req.body.name,
-        emp_salary : req.body.salary,
+       emp_salary : req.body.salary,
         emp_desi : req.body.desi
     }
 
