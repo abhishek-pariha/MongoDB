@@ -1,0 +1,22 @@
+<h1>Display Records</h1>
+{{mydata.length}} 
+<table border="1">
+    <tr>
+        <th>NO</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Action</th>
+    </tr>
+    {{#each mydata}}
+    <tr>
+        <td>{{_id}}</td>
+        <td>{{user_name}}</td>
+        <td>{{user_email}}</td>
+        <td>{{user_Mobile}}</td>
+        <td>
+            <a href="/users/edit/{{_id}}">Edit</a> | 
+            <a href="/users/delete/{{_id}}">Delete</a></td>
+    </tr>
+    {{/each}}
+</table>

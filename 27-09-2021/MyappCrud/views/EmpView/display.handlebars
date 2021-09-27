@@ -1,0 +1,21 @@
+<h1>Display Data</h1>
+<p>{{mydata.length}} Data Founded</p> 
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Designation</th>
+        <th>Action</th>
+    </tr>
+    {{#each mydata}}
+    <tr>
+        <td>{{emp_name}}</td>
+        <td>{{emp_salary}}</td>
+        <td>{{emp_desi}}</td>
+        <td>
+            <a href="/EmpView/edit/{{_id}}">Edit</a> | 
+            <a href="/EmpView/delete/{{_id}}">Delete</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>

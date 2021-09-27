@@ -1,0 +1,24 @@
+<h1>Display Records</h1>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Gender</th>
+        <th>City</th>
+        <th>Action</th>
+    </tr>
+    {{#each mydata}}
+    <tr>
+        <td>{{student_name}}</td>
+        <td>{{student_email}}</td>
+        <td>{{student_password}}</td>
+        <td>{{student_gender}}</td>
+        <td>{{student_address}}</td>
+        <td>
+            <a href="/student_view/edit/{{_id}}">Edit</a> | 
+            <a href="/student_view/delete/{{_id}}">Delete</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>

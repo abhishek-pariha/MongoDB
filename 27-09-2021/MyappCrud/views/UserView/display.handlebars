@@ -1,0 +1,20 @@
+<h1>Display Data</h1>
+<table border="1">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Action</th>
+    </tr>
+    {{#each mydata}}
+    <tr>
+        <td>{{user_name}}</td>
+        <td>{{user_email}}</td>
+        <td>{{user_password}}</td>
+        <td>
+            <a href="/UserView/edit/{{_id}}">Edit</a> |
+            <a href="/UserView/delete/{{_id}}">Delete</a>
+        </td>
+    </tr>
+    {{/each}}
+</table>
