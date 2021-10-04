@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Signup</title>
+    </head>
+    <body>
+        <h1>Signup</h1>
+        <form method="POST" action="Signup">
+            <div>
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Name">
+            </div>
+            <div>
+                <label>Mobile</label>
+                <input type="number" name="mobile" placeholder="Mobile Number">
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="email" name="email" placeholder="example@gmail.com">
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" name="password" placeholder="Password">
+            </div>
+            <div>
+                <label>DOB</label>
+                <input type="date" name="dob" placeholder="Date of Birth">
+            </div>
+            <div>
+                <label>Gender</label>
+                <input type="radio" name="gender">Male
+                <input type="radio" name="gender">Female
+            </div>
+            <div>
+                <label>Are You Admin</label>
+                <select name="user_isadmin">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                </select>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+            <div>
+                <a href="Login"><u>Login</u></a>
+            </div>
+        </form>
+    </body>
+</html>

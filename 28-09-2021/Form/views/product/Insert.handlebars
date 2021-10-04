@@ -1,0 +1,33 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form method="POST" action="Insert" enctype="multipart/form-data">
+            <div>
+                <input type="text" name="name" placeholder="Product  Name">
+            </div>
+            <div>
+                <input type="text" name="detail" placeholder="Product Details">
+            </div>
+            <div>
+                <input type="number" name="price" placeholder="Product  Price">
+            </div>
+            <div>
+                <input type="file" name="file123" >
+            </div>
+            <div>
+                <select name="_category">
+                    {{#each mydata}}
+                        <option value="{{this._id}}">{{this.category_name}}</option>
+
+                    {{/each}}
+                </select>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </body>
+</html>

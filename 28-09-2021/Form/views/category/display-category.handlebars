@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <script>
+            function confirmDelete()
+            var x= confirm('Ary you sure you want to delete');
+            if(x)
+                return true;
+            else
+                return false;
+        </script>
+    </head>
+    <body>
+        <table border="1">
+            {{user_array.length}}
+            <h1>Display Table</h1>
+            <tr>
+                <th>ID</th>
+                <th>Category_Name</th>
+                <th>Action</th>
+            </tr>
+            {{#each user_array}}
+                <tr>
+                    <td>{{user_array.length}}</td>
+                    <td>{{category_name}}</td>
+                    <td>
+                        <a href="/category/edit/{{_id}}">Edit</a>
+                        <a href="/category/delete/{{_id}}" onclick="confirmDelete()">Delete</a>
+                        <a href="/category/show/{{_id}}">Show</a>
+                    </td>
+                </tr>
+            {{/each}}
+        </table>
+    </body>
+</html>
