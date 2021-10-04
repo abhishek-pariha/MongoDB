@@ -62,7 +62,7 @@ router.get('/delete/:id',function(req,res,next){
       console.log("The Data Succesfully deleted");
       res.redirect('/users/display');
     }
-  })
+  }).lean();
 });
 
 //Data Edited
