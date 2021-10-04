@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add City</title>
+    </head>
+    <body>
+        <form method="POST" action="add">
+            <div>
+                <label>City Name</label>
+                <input type="text" name="name">
+            </div>
+            <div>
+                <label>Select State</label>
+                <select name="_state">
+                    {{#each mydata}}
+                        <option value="{{this._id}}">{{this.state_name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </body>
+</html>

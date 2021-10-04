@@ -1,0 +1,20 @@
+<h1>Display Data</h1>
+<table border="1">
+    <thead>
+        <tr>
+            <td>State Name</td>
+            <td>Country Name</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    {{#each mydata}}
+        <tr>
+            <td>{{state_name}}</td>
+            <td>{{_country.country_name}}</td>
+            <td>
+                <a href="/state/edit/{{_id}}">Edit</a>
+                <a href="/state/delete/{{_id}}">Delete</a>
+            </td>
+        </tr>
+    {{/each}}
+</table>
