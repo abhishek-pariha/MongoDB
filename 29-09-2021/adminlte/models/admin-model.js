@@ -6,5 +6,5 @@ var mySchema = new Schema({
     admin_password : String,
     admin_photo : String
 })
-
+ 
 module.exports = mongoose.model('admin',mySchema);

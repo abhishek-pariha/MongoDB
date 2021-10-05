@@ -43,7 +43,7 @@ app.use(session({
 app.use(fileUpload());
 //DB Connection Start
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/myproject', {useNewUrlParser: true})
+mongoose.connect('mongodb://MiniProjectdb:MiniProjectdb@localhost:27017/MiniProjectdb', {useNewUrlParser: true})
 .then(() => console.log('Connection Succesfully'))
 .catch((err) => console.error(err))
 

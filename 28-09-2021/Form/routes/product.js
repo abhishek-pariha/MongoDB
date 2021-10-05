@@ -58,7 +58,7 @@ router.get('/display',function(req, res, next){
         .populate('_category')
         .exec(function(err, data){
                 console.log("Successfully display"+data);
-                res.render('Product/display',{mydata : data});
+                res.render('product/display',{mydata : data});
         })
     }).lean();
 })

@@ -11,23 +11,35 @@ router.get('/',function(req, res, next){
 })
 
 router.get('/add',function(req, res, next){
-    StateModel.find(function(err, data){
+    StateModel.find(function(err, data_state){
         if(err){
             console.log("Error in showing data"+err);
         }else{
-            console.log("Successflly show form"+data);
-            res.render('city/add',{mydata : data});
+            console.log("Successflly show form"+data_state);
+            CountryModel.find(function(err, data_country){
+                if(err){
+                    console.log("Error in country part"+err);
+                }else{
+                    console.log("city Successfully show"+data_country)
+                    res.render('city/add',{mydata : data_state,mycountry : data_country});
+                }
+            })
+            
         }
     })
 })
 
 router.post('/add',function(req, res, next){
-    
+    console.log(req.body);
     const mybodydata = {
         city_name : req.body.name,
+        _country : req.body._country,
         _state : req.body._state
     }
-
+    console.log("Name is "  + req.body.cty);
+    console.log("ID is "  + req.body._category);
+    console.log("City Cat is "  + req.body._states);
+    
     var data = CityModel(mybodydata);
     data.save(function(err, data){
         if(err){
@@ -41,8 +53,18 @@ router.post('/add',function(req, res, next){
 
 router.get('/display',function(req, res, next){
     CityModel.find(function(err, data){
-        CityModel.find({}).populate('_state').exec(function(err){
-            res.render('city/display',{mydata : data});
+        console.log("diplay1"+data);
+        if(err) res.json({message: 'There are no posts here.'});
+
+        CityModel.find({
+            mobile : "Samsung"
+        }).populate('_country _state').exec(function(err,data){
+            if(err){
+                console.log("Error in display");
+            }else{
+                console.log("Successfully display"+data);
+                res.render('city/display',{mydata : data});
+            }
         })
     })
 })

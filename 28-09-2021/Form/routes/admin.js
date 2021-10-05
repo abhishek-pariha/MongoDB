@@ -40,7 +40,7 @@ router.post('/Login',function(req, res, next){
       }
       else if(db_email == email && db_password == password){
         req.session.email = db_email;
-        res.redirect('admin-view/Home');
+        res.redirect('/Home');
       }
       else{
         console.log("Credentials wrong");

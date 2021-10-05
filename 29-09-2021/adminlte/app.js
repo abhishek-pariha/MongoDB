@@ -31,7 +31,7 @@ app.use('/users', usersRouter);
 
 //Db Connection
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://localhost:27017/Adminlte")
+mongoose.connect("mongodb://Adminltedb:Adminltedb@localhost:27017/Adminltedb")
 .then(() => console.log("Connected Successfully"))
 .catch((err) => console.log(err))
 

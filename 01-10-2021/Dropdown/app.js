@@ -38,7 +38,7 @@ app.use('/state',stateRouter);
 app.use('/city',cityRouter);
 
 //Db Connection
-mongoose.connect('mongodb://localhost:27017/dbdropdown')
+mongoose.connect('mongodb://Adminltedb:Adminltedb@localhost:27017/Adminltedb')
 .then(() => console.log('Connection Successfully'))
 .catch((err) => console.log(err))
 

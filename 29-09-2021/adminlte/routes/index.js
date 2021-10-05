@@ -79,7 +79,7 @@ router.post('/login',function(req, res, next){
   var password = req.body.admin_password;
   console.log(req.body);
   UserModel.findOne({'user_email' : email}, function(err, db_users){
-
+ 
     console.log("Find One"+ db_users);
 
     if(db_users){
