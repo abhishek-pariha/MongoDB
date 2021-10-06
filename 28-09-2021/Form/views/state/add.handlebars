@@ -4,15 +4,19 @@
         <title>Add States</title>
     </head>
     <body>
-        <form method="POST">
+        <form method="POST" action="add">
             <div>
                 <label>Add State</label>
-                <input type="text" value="{{mydata.state_name}}" name="name">
+                <input type="text" name="name">
             </div>
-            {{!-- <div>
+            <div>
                 <label>Select Country</label>
-                <input type="text" value="{{mydata._country}}" name="_country">
-            </div> --}}
+                <select name="_country">
+                    {{#each mydata}}
+                        <option value="{{this._id}}">{{this.country_name}}</option>
+                    {{/each}}
+                </select>
+            </div>
             <div>
                 <button type="submit">Submit</button>
                 <button type="reset">Reset</button>

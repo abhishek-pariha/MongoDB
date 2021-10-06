@@ -6,7 +6,15 @@ var logger = require('morgan');
 var exphbs = require('express-handlebars');
 var mongoose = require('mongoose');
 var {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
-var _handlebars = require('handlebars')
+var _handlebars = require('handlebars');
+
+_handlebars.registerHelper("toString", function(data) {
+  return data.toString();
+});
+
+var handlebarsHelpers = require('handlebars-helpers')({
+  handlebars: _handlebars
+});
 
 
 var indexRouter = require('./routes/index');
@@ -21,11 +29,12 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars',exphbs({
   defaultLayout : 'main',
-  handlebars: allowInsecurePrototypeAccess(_handlebars)
+  handlebars: allowInsecurePrototypeAccess(_handlebars),
+  helpers:handlebarsHelpers
 }))
 app.set('view engine', 'handlebars');
 
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());

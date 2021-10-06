@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add States</title>
+    </head>
+    <body>
+        <form method="POST">
+            <div>
+                <label>Add State</label>
+                <input type="text" value="{{mydata.state_name}}" name="name">
+            </div>
+            <div>
+                <label>Add Country</label>
+                <select name="_country">
+                {{#each mycdata }}
+                    <option value="{{_id}}" {{#compare (toString ../selectedCountry) '==' (toString _id)}}selected{{/compare}}>{{country_name}}</option>
+                {{/each}}
+                </select>
+            </div> 
+            <div>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </body>
+</html>

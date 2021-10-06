@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add City</title>
+    </head>
+    <body>
+        <form method="POST">
+            <div>
+                <label>City Name</label>
+                <input type="text" value="{{mydata.city_name}}" name="name">
+            </div>
+            <div>
+
+
+             <label>Add State</label>
+                <select name="_state">
+                    {{#each mystatedata}}
+                        <option value="{{_id}}" {{#compare (toString ../selecdata) '=='(toString _id)}}selected{{/compare}} >{{state_name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div>
+                <label>Add country</label>
+                <select name="_country">
+                {{#each mycountrydata}}
+                    <option value="{{_id}}" {{#compare (toString ../selecdata) '==' (toString _id)}}selected{{/compare}}>{{country_name}}</option>
+                {{/each}}
+                </select>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </body>
+</html>

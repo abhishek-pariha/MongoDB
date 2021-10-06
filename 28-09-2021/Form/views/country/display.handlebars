@@ -1,0 +1,18 @@
+<table border="1">
+    <tr>
+        <th>No</th>
+        <th>Country name</th>
+        <th>Action</th>
+    </tr>
+    {{#each mydata}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{country_name}}</td>
+          
+            <td>
+                <a href="/country/edit/{{_id}}">Edit</a>
+                <a href="/country/delete/{{_id}}">Delete</a>
+            </td>
+        </tr>
+    {{/each}}
+</table>

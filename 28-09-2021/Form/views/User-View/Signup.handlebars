@@ -2,49 +2,111 @@
     <head>
         <meta charset="utf-8">
         <title>Signup</title>
+        <style>
+            body {font-family: Arial, Helvetica, sans-serif;}
+            * {box-sizing: border-box}
+
+            /* Full-width input fields */
+            input{
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            border: none;
+            background: #f1f1f1;
+            }
+
+            input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+            }
+
+            hr {
+            border: 1px solid #f1f1f1;
+            margin-bottom: 25px;
+            }
+
+            /* Set a style for all buttons */
+            button {
+            background-color: #04AA6D;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            opacity: 0.9;
+            }
+
+            button:hover {
+            opacity:1;
+            }
+
+            /* Extra styles for the cancel button */
+            .cancelbtn {
+            padding: 14px 20px;
+            background-color: #f44336;
+            }
+
+            /* Float cancel and signup buttons and add an equal width */
+            .cancelbtn, .signupbtn {
+            float: left;
+            width: 50%;
+            }
+
+            /* Add padding to container elements */
+            .container {
+            padding: 16px;
+            }
+
+            /* Clear floats */
+            .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+            }
+
+            /* Change styles for cancel button and signup button on extra small screens */
+            @media screen and (max-width: 300px) {
+            .cancelbtn, .signupbtn {
+                width: 100%;
+            }
+            }
+        </style>
     </head>
     <body>
         <h1>Signup</h1>
         <form method="POST" action="Signup">
-            <div>
+            <div class="container">
                 <label>Name</label>
                 <input type="text" name="name" placeholder="Name">
-            </div>
-            <div>
+            
                 <label>Mobile</label>
                 <input type="number" name="mobile" placeholder="Mobile Number">
-            </div>
-            <div>
+            
                 <label>Email</label>
                 <input type="email" name="email" placeholder="example@gmail.com">
-            </div>
-            <div>
+            
                 <label>Password</label>
                 <input type="password" name="password" placeholder="Password">
-            </div>
-            <div>
+            
                 <label>DOB</label>
                 <input type="date" name="dob" placeholder="Date of Birth">
-            </div>
-            <div>
+            
                 <label>Gender</label>
-                <input type="radio" name="gender">Male
-                <input type="radio" name="gender">Female
-            </div>
-            <div>
+                <input type="radio" name="gender"><label>Male</label>
+                <input type="radio" name="gender"><label>Female</label><br/><br/>
+            
                 <label>Are You Admin</label>
                 <select name="user_isadmin">
                         <option value="true">Yes</option>
                         <option value="false">No</option>
                 </select>
-            </div>
-            <div>
+            
                 <button type="submit">Submit</button>
                 <button type="reset">Reset</button>
             </div>
-            <div>
-                <a href="Login"><u>Login</u></a>
-            </div>
+            
         </form>
     </body>
 </html>
